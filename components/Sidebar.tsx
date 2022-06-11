@@ -17,16 +17,16 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="pt-12">
-      <div className="p-2 rounded-full ring-8 ring-[#64ffda] avatar ">
+    <div className="pt-12 border border-[#64ffda] rounded-2xl">
+      <div className="p-2 rounded-full ring-8 ring-slate-900 dark:ring-[#64ffda] avatar ">
         <div className="w-40 rounded-full">
           <Image src={dp} alt="avatar" quality="100" />
         </div>
       </div>
       <h3 className="mb-3 font-mono dark:text-[#64ffda]">Hi, I am</h3>
       <h2 className="bigHeading font-bold dark:text-[#ccd6f6]">Razib Saha</h2>
-      <h3 className="font-bold secondHeading dark:text-[#8892b0]">
-        I can Design and Code
+      <h3 className=" secondHeading dark:text-[#8892b0]">
+        I can design and code
       </h3>
 
       <div className="mt-8 mb-6">
@@ -43,15 +43,15 @@ const Sidebar = () => {
  {/* Social Media Icons */}
       <div className="mt-12 mb-5 md:mb-12">
         <a href="https://www.linkedin.com/in/razibsaha/">
-          <FaLinkedin className="inline w-8 h-8 mx-2" />
+          <FaLinkedin className="inline w-8 h-8 mx-2 hover:text-[#0A66C2]" />
         </a>
         <a href="https://github.com/razibsaha">
           {" "}
-          <FaGithub className="inline w-8 h-8 mx-2" />
+          <FaGithub className="inline w-8 h-8 mx-2 hover:text-[#F1502F]" />
         </a>
         <a href="https://dribbble.com/razibsaha">
           {" "}
-          <AiOutlineDribbble className="inline w-8 h-8 mx-2" />
+          <AiOutlineDribbble className="inline w-8 h-8 mx-2  hover:text-[#E94C88]" />
         </a>
       </div>
       {/* Contact Info */}

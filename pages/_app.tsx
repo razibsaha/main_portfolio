@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <div className="grid grid-cols-12 px-5 my-14 lg:mb-0 md:mb-16 sm:px-20 md:px-32 lg:px-36 xl:px-48 ">
+      <div className="grid grid-cols-12 gap-5 md:py-12 lg:mb-0 md:mb-16 md:px-32 lg:px-36 xl:px-48 dark:bg-[#0a192f]">
       <div className="col-span-12 text-base text-center bg-white dark:bg-dark-500 lg:col-span-3 shadow-custom-light dark:shadow-custom-dark dark:bg-[#0a192f]">
         <Sidebar/>
       </div>
