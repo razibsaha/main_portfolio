@@ -34,7 +34,7 @@ const Sidebar = () => {
           href="https://drive.google.com/uc?export=download&id=1Gnp64PV9SACNAqnfSI_MSM1zf72d0Xb7"
           download="Razib_Saha_Resume.pdf"
         >
-          <h6 className="inline px-5 py-3 mt-8 mb-5 text-[#0a192f] dark:text-[#64ffda] dark:hover:text-[#0a192f] text-center border-2 dark:border dark:border-[#64ffda] hover:bg-[#64ffda] rounded-lg">
+          <h6 className="inline px-5 py-3 mt-8 mb-5 text-[#0a192f] dark:text-[#64ffda] dark:hover:text-[#0a192f] text-center border-2 dark:border dark:border-[#64ffda] dark:hover:bg-[#64ffda] hover:bg-black rounded-lg hover:text-white">
             <AiOutlineCloudDownload className="inline w-6 h-6 mr-2" />
             Download Resume
           </h6>
@@ -72,7 +72,9 @@ const Sidebar = () => {
       </div>
       <div>
         <button
-          className="w-8/12 px-5 py-2 text-white bg-black rounded-full cursor-pointer bg-gradient-to-r from-green to-blue-500 hover:scale-105 focus:outline-none"
+          className="w-12/12 md:w-6/12 px-5 py-2 text-white dark:bg-[#64ffda]
+          dark:text-black
+          bg-black rounded-full cursor-pointer  hover:scale-105 focus:outline-none"
           onClick={() => window.open("mailto:contact@razibsaha.com")}
         >
           Email me
