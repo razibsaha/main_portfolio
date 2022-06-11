@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-undef */
 import Image from "next/image";
 import React, { useState } from "react";
-import dp from "../../portfolio/Assets/images/portfolio_dp.png";
+import dp from "../Assets/images/portfolio_dp.png";
 import { FaCode, FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineCloudDownload, AiOutlineDribbble } from "react-icons/ai";
 import { MdLightMode, MdLocationPin, MdNightlight } from "react-icons/md";
