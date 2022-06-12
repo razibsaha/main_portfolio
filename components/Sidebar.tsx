@@ -2,12 +2,14 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import dp from "../Assets/images/portfolio_dp.png";
-import { FaCode, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineCloudDownload, AiOutlineDribbble } from "react-icons/ai";
 import { MdLightMode, MdLocationPin, MdNightlight } from "react-icons/md";
 import { SiMinutemailer } from "react-icons/si";
 import { MdCall } from "react-icons/md";
 import { useTheme } from "next-themes";
+import { Typewriter, useTypewriter, Cursor } from 'react-simple-typewriter'
+
 
 const Sidebar = () => {
   const { theme, setTheme } = useTheme();
@@ -15,6 +17,7 @@ const Sidebar = () => {
   const changeTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
+  
 
   return (
     <div className="pt-12 border border-[#64ffda] rounded-2xl">
@@ -25,9 +28,22 @@ const Sidebar = () => {
       </div>
       <article className="text-cmb-3 font-mono dark:text-[#64ffda]">Hi, I am </article>
       <h2 className="bigHeading font-bold dark:text-[#ccd6f6]">Razib Saha</h2>
-      <h3 className=" secondHeading dark:text-[#8892b0]">
+      {/* <h3 className=" secondHeading dark:text-[#8892b0]">
         I can design and code
-      </h3>
+      </h3> */}
+      <div> I can <span style={{ color: 'red', fontWeight: 'bold' }}>
+          <Typewriter
+            words={['Eat', 'Sleep', 'Code', 'Repeat!']}
+            loop={5}
+            cursor
+            cursorStyle='|'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </span>
+      
+      </div>
 
       <div className="mt-8 mb-6">
         <a
