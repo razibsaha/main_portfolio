@@ -34,6 +34,7 @@ const Sidebar = () => {
       <div className="w-4/12 mx-auto mt-1 md:w-6/12">
         <span className="flex secondHeading">
           <span className="mr-1">I can</span>
+          <span className="dark:text-[#64ffda]">
           <Typewriter
             options={{
               strings: ["code", "design","dance"],
@@ -41,6 +42,7 @@ const Sidebar = () => {
               loop: true,
             }}
           />
+          </span>
         </span>
       </div>
 
