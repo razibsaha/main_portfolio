@@ -110,22 +110,4 @@ p {
   max-width: 540px;
 }
 
-.typing {
-  width: 22ch;
-  border-right: 2px solid transparent;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 5s steps(12), caret 0.5s step-end infinite alternate;
-}
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes caret {
-  10% {
-    border-color: transparent;
-  }
-}

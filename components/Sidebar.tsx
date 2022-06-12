@@ -8,8 +8,7 @@ import { MdLightMode, MdLocationPin, MdNightlight } from "react-icons/md";
 import { SiMinutemailer } from "react-icons/si";
 import { MdCall } from "react-icons/md";
 import { useTheme } from "next-themes";
-import { Typewriter, useTypewriter, Cursor } from 'react-simple-typewriter'
-
+import Typewriter from "typewriter-effect";
 
 const Sidebar = () => {
   const { theme, setTheme } = useTheme();
@@ -17,7 +16,6 @@ const Sidebar = () => {
   const changeTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
-  
 
   return (
     <div className="pt-12 border border-[#64ffda] rounded-2xl">
@@ -26,23 +24,24 @@ const Sidebar = () => {
           <Image src={dp} alt="avatar" quality="100" />
         </div>
       </div>
-      <article className="text-cmb-3 font-mono dark:text-[#64ffda]">Hi, I am </article>
+      <article className="text-cmb-3 font-mono dark:text-[#64ffda]">
+        Hi, I am{" "}
+      </article>
       <h2 className="bigHeading font-bold dark:text-[#ccd6f6]">Razib Saha</h2>
       {/* <h3 className=" secondHeading dark:text-[#8892b0]">
         I can design and code
       </h3> */}
-      <div> I can <span style={{ color: 'red', fontWeight: 'bold' }}>
+      <div className="w-4/12 mx-auto mt-1 md:w-6/12">
+        <span className="flex secondHeading">
+          <span className="mr-1">I can</span>
           <Typewriter
-            words={['Eat', 'Sleep', 'Code', 'Repeat!']}
-            loop={5}
-            cursor
-            cursorStyle='|'
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
+            options={{
+              strings: ["code", "design","dance"],
+              autoStart: true,
+              loop: true,
+            }}
           />
         </span>
-      
       </div>
 
       <div className="mt-8 mb-6">
@@ -56,7 +55,7 @@ const Sidebar = () => {
           </h6>
         </a>
       </div>
- {/* Social Media Icons */}
+      {/* Social Media Icons */}
       <div className="mt-12 mb-5 md:mb-12">
         <a href="https://www.linkedin.com/in/razibsaha/">
           <FaLinkedin className="inline w-8 h-8 mx-2 hover:text-[#0A66C2]" />
@@ -72,19 +71,20 @@ const Sidebar = () => {
       </div>
       {/* Contact Info */}
       <div className="grid md:mb-12">
-      <div className="flex flex-col items-start mx-auto mt-auto mb-5">
-        <p>
-          <MdLocationPin className="inline w-6 h-6 mr-3 dark:text-[#64ffda]" />Feni, Bangladesh
-        </p>
-        <p>
-          <SiMinutemailer className="inline w-6 h-6 mr-3 dark:text-[#64ffda]" />
-          contact@razibsaha.com
-        </p>
-        <p>
-          <MdCall className="inline w-6 h-6 mr-3 dark:text-[#64ffda]" />
-          +8801719-881180
-        </p>
-      </div>
+        <div className="flex flex-col items-start mx-auto mt-auto mb-5">
+          <p>
+            <MdLocationPin className="inline w-6 h-6 mr-3 dark:text-[#64ffda]" />
+            Feni, Bangladesh
+          </p>
+          <p>
+            <SiMinutemailer className="inline w-6 h-6 mr-3 dark:text-[#64ffda]" />
+            contact@razibsaha.com
+          </p>
+          <p>
+            <MdCall className="inline w-6 h-6 mr-3 dark:text-[#64ffda]" />
+            +8801719-881180
+          </p>
+        </div>
       </div>
       <div>
         <button
