@@ -7,12 +7,23 @@ import Navbar from "../components/Navbar";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <div className="grid grid-cols-12 gap-5 md:py-12 lg:mb-0 md:mb-16 md:px-32 lg:px-36 xl:px-48 dark:bg-[#0a192f]">
-      <div className="col-span-12 text-base text-center bg-white dark:bg-dark-500 lg:col-span-3 shadow-custom-light dark:shadow-custom-dark dark:bg-[#0a192f]">
-        <Sidebar/>
+      <div className="grid grid-cols-12 md:gap-3 gap-5 md:py-12 lg:mb-0 md:mb-16 md:px-8 lg:px-24 xl:px-32 dark:bg-[#0a192f]">
+        
+        <div className="col-span-12 text-base text-center bg-white dark:bg-dark-500
+        md:col-span-5
+        lg:col-span-3 shadow-custom-light dark:shadow-custom-dark dark:bg-[#0a192f]">
+          <Sidebar />
+        </div>
+        <div className="flex flex-col col-span-12 overflow-hidden bg-white shadow-custom-light dark:shadow-custom-dark rounded-2xl md:col-span-7 lg:col-span-9 dark:bg-dark-500 dark:bg-red-500">
+          <Navbar />
+          <Component {...pageProps} />
+        </div>
       </div>
-      <div className="flex flex-col col-span-12 overflow-hidden bg-white shadow-custom-light dark:shadow-custom-dark rounded-2xl lg:col-span-9 dark:bg-dark-500 dark:bg-red-500"><Navbar/><Component {...pageProps} /></div>
-    </div>
+      <div className="shape-blob"></div>
+      <div className="shape-blob one"></div>
+      <div className="shape-blob two">
+        
+      </div>
     </ThemeProvider>
   );
 }

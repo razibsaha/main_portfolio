@@ -23,7 +23,7 @@ const Sidebar = () => {
           <Image src={dp} alt="avatar" quality="100" />
         </div>
       </div>
-      <h3 className="mb-3 font-mono dark:text-[#64ffda]">Hi, I am</h3>
+      <article className="text-cmb-3 font-mono dark:text-[#64ffda]">Hi, I am </article>
       <h2 className="bigHeading font-bold dark:text-[#ccd6f6]">Razib Saha</h2>
       <h3 className=" secondHeading dark:text-[#8892b0]">
         I can design and code
@@ -72,7 +72,7 @@ const Sidebar = () => {
       </div>
       <div>
         <button
-          className="w-12/12 md:w-6/12 px-5 py-2 text-white dark:bg-[#64ffda]
+          className="w-12/12 md:w-5/12 px-5 py-2 text-white dark:bg-[#64ffda]
           dark:text-black
           bg-black rounded-full cursor-pointer  hover:scale-105 focus:outline-none"
           onClick={() => window.open("mailto:contact@razibsaha.com")}
@@ -87,8 +87,8 @@ const Sidebar = () => {
           htmlFor="checkbox"
           className="checkbox-label dark:bg-slate-700 bg-slate-700"
         >
-          <MdNightlight className="w-8 h-12 text-white" />
-          <MdLightMode className="inline w-8 h-12 text-yellow-400" />
+          <MdNightlight className="w-8 h-12 text-[#64ffda]" />
+          <MdLightMode className="inline w-8 h-12 text-[#64ffda]" />
           <span className="w-8 h-12 ball"></span>
         </label>
       </div>
