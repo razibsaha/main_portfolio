@@ -1,4 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import dp from "../Assets/images/portfolio_dp.png";
+import Loader from "../components/Loader";
 
 class MyDocument extends Document {
   render() {
@@ -11,11 +13,14 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="dark:dark-500 dark:text-white">
+
+        <body className="dark:text-white">
           
-       
+
           <Main />
           <NextScript />
+            
+          
         </body>
       </Html>
     );

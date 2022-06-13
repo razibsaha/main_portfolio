@@ -19,10 +19,11 @@ const Sidebar = () => {
 
   return (
     <div className="pt-12 border border-[#64ffda] rounded-2xl">
-      <div className="p-2 rounded-full ring-8 ring-slate-900 dark:ring-[#64ffda] avatar ">
-        <div className="w-40 rounded-full">
+      <div className="p-2 rounded-full ring-4 ring-[#64ffda] avatar ">
+        <div className="w-32 rounded-full">
           <Image src={dp} alt="avatar" quality="100" />
         </div>
+        
       </div>
       <article className="text-cmb-3 font-mono dark:text-[#64ffda]">
         Hi, I am{" "}
@@ -31,13 +32,13 @@ const Sidebar = () => {
       {/* <h3 className=" secondHeading dark:text-[#8892b0]">
         I can design and code
       </h3> */}
-      <div className="w-4/12 mx-auto mt-1 md:w-6/12">
-        <span className="flex secondHeading">
-          <span className="mr-1">I can</span>
+      <div className="">
+        <span className="flex justify-center secondHeading">
+          <span className="mr-1">I do</span>
           <span className="dark:text-[#64ffda]">
           <Typewriter
             options={{
-              strings: ["code", "design","dance"],
+              strings: ["Front-End", "Back-End","UI/UX"],
               autoStart: true,
               loop: true,
             }}
@@ -51,7 +52,7 @@ const Sidebar = () => {
           href="https://drive.google.com/uc?export=download&id=1Gnp64PV9SACNAqnfSI_MSM1zf72d0Xb7"
           download="Razib_Saha_Resume.pdf"
         >
-          <h6 className="inline px-5 py-3 mt-8 mb-5 text-[#0a192f] dark:text-[#64ffda] dark:hover:text-[#0a192f] text-center border-2 dark:border dark:border-[#64ffda] dark:hover:bg-[#64ffda] hover:bg-black rounded-lg hover:text-white">
+          <h6 className="inline px-3 py-3 mt-8 mb-5 text-[#0a192f] dark:text-[#64ffda] dark:hover:text-[#0a192f] text-center border-2 dark:border dark:border-[#64ffda] dark:hover:bg-[#64ffda] hover:bg-black rounded-lg hover:text-white">
             <AiOutlineCloudDownload className="inline w-6 h-6 mr-2" />
             Download Resume
           </h6>
