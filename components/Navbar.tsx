@@ -1,43 +1,44 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import NavItem from "./NavItem";
+
+
 
 const Navbar = () => {
-  const [activeItem, setActiveItem] = useState<string>("");
+  const [active, setActive] = useState('');
   const {pathname} = useRouter() 
 
   useEffect(()=>{
-    if(pathname==='/') setActiveItem('About')
-    if(pathname==='/projects') setActiveItem('Projects')
-    if(pathname==='/resume') setActiveItem('Resume')
-  },['hello'])
+    if(pathname==='/') setActive('About')
+    else if(pathname==='/projects') setActive('Projects')
+    else if(pathname==='/resume') setActive('Resume')
+  },[])
 
   return (
-    <section>
-      <span className="font-bold text-white">{activeItem}</span>
-      <div className="flex space-x-3 text-slate-50 font-2xl">
-        {activeItem !== "About" && (
-          <Link href="/">
-            <a>
-              <span onClick={()=>setActiveItem('About')}>About</span>
-            </a>
-          </Link>
-        )}
-        {activeItem !== "Projects" && (
-          <Link href="/projects">
-            <a>
-              <span onClick={()=>setActiveItem('Projects')}>Projects</span>
-            </a>
-          </Link>
-        )}
-        {activeItem !== "Resume" && (
-          <Link href="/resume">
-            <a>
-              <span onClick={()=>setActiveItem('Resume')}>Resume</span>
-            </a>
-          </Link>
-        )}
-      </div>
+    <section className="flex items-center justify-between px-5 py-3 my-3">
+      
+      <span className="text-2xl font-bold dark:text-[#64ffda]">{active}</span>
+      
+      <div className='text-base font-normal md:text-xl'>
+            <NavItem
+               active={active}
+               setActive={setActive}
+               name='About'
+               route='/'
+            />
+            <NavItem
+               active={active}
+               setActive={setActive}
+               name='Resume'
+               route='/resume'
+            />
+            <NavItem
+               active={active}
+               setActive={setActive}
+               name='Projects'
+               route='/projects'
+            />
+         </div>
     </section>
   );
 };
