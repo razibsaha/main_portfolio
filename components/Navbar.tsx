@@ -12,7 +12,7 @@ const Navbar = () => {
     if(pathname==='/') setActive('About')
     else if(pathname==='/projects') setActive('Projects')
     else if(pathname==='/resume') setActive('Resume')
-  },[pathname])
+  },[])
 
   return (
     <section className="flex items-center justify-between px-5 py-3 my-3">
