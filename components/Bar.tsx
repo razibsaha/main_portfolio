@@ -34,9 +34,8 @@ const Bar: FunctionComponent<{ value: Skill }> = ({
           initial="initial"
           animate="animate"
         >
-          <Icon className="mr-3 dark:text-black" /> <h6 className="dark:text-black">
-          {name}
-          </h6>
+          <Icon className="mr-3 dark:text-black" />{" "}
+          <h6 className="dark:text-black">{name}</h6>
         </motion.div>
       </div>
     </div>
