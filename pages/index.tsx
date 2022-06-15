@@ -75,7 +75,7 @@ const About: NextPage = () => {
     },
   };
 }; */
-export const getStaticProps: GetStaticProps = async (
+/* export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
   // console.log(context);
@@ -85,5 +85,5 @@ export const getStaticProps: GetStaticProps = async (
   console.log({ services });
   return { props: { services: services } };
 };
-
+ */
 export default About;
