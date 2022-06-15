@@ -5,6 +5,6 @@ const nextConfig = {
 
 module.exports = {
   env: {
-    SERVER: process.env.SERVER,
+    VERCEL_URL: process.env.VERCEL_URL,
   },
 };

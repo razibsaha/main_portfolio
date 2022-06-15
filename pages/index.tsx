@@ -1,13 +1,8 @@
-import {
-  GetStaticProps,
-  GetStaticPropsContext,
-  NextPage,
-} from "next";
-import React from "react";
+import { motion } from "framer-motion";
+import { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
+import { fadeDownIn, fadeInUp, stagger } from "../animation";
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../data";
-import { motion } from "framer-motion";
-import { fadeInUp, stagger, fadeDownIn } from "../animation";
 console.log(services);
 
 const About: NextPage = () => {
@@ -23,7 +18,7 @@ const About: NextPage = () => {
         <article className="font-regular y-3 dark:text-slate-400">
           I am a tireless seeker of knowledge, occasional purveyor of wisdom and
           also, coincidentally, a full-stack web developer with experience in
-          UI/UX. My school of thought is reliant on schooling my thought 
+          UI/UX. My school of thought is reliant on schooling my thought
           thoroughly, regularly, keeping abreast of design the next thing,
           branding, advertising trends, and solutions. The world is changing so
           fast and to cope up with the pace of it there is no option without
@@ -80,13 +75,12 @@ const About: NextPage = () => {
     },
   };
 }; */
-const server = process.env.SERVER;
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
   // console.log(context);
 
-  const res = await fetch(`${server}/api/services`);
+  const res = await fetch(`${process.env.VERCEL_URL}/api/services`);
   const { services } = await res.json();
   console.log({ services });
   return { props: { services: services } };
