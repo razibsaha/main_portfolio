@@ -1,6 +1,4 @@
 import {
-  GetServerSideProps,
-  GetServerSidePropsContext,
   GetStaticProps,
   GetStaticPropsContext,
   NextPage,
@@ -25,7 +23,7 @@ const About: NextPage = () => {
         <article className="font-regular y-3 dark:text-slate-400">
           I am a tireless seeker of knowledge, occasional purveyor of wisdom and
           also, coincidentally, a full-stack web developer with experience in
-          UI/UX. My school of thought is reliant on schooling my thought –
+          UI/UX. My school of thought is reliant on schooling my thought 
           thoroughly, regularly, keeping abreast of design the next thing,
           branding, advertising trends, and solutions. The world is changing so
           fast and to cope up with the pace of it there is no option without

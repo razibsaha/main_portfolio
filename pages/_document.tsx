@@ -1,6 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import dp from "../Assets/images/portfolio_dp.png";
-import Loader from "../components/Loader";
 
 class MyDocument extends Document {
   render() {

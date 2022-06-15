@@ -1,12 +1,11 @@
 /* eslint-disable react/jsx-no-undef */
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import dp from "../Assets/images/portfolio_dp.png";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineCloudDownload, AiOutlineDribbble } from "react-icons/ai";
-import { MdLightMode, MdLocationPin, MdNightlight } from "react-icons/md";
+import { MdLightMode, MdLocationPin, MdNightlight,MdCall } from "react-icons/md";
 import { SiMinutemailer } from "react-icons/si";
-import { MdCall } from "react-icons/md";
 import { useTheme } from "next-themes";
 import Typewriter from "typewriter-effect";
 

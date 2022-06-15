@@ -4,7 +4,6 @@ import Sidebar from "../components/Sidebar";
 import { ThemeProvider } from "next-themes";
 import Navbar from "../components/Navbar";
 import { AnimatePresence } from "framer-motion";
-import { Router } from "next/router";
 
 
 function MyApp({ Component, pageProps,router }: AppProps) {

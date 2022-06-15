@@ -1,10 +1,9 @@
-import { RiComputerLine } from "React-icons/ri";
-import { FaServer } from "React-icons/fa";
-import { AiOutlineAntDesign, AiOutlineApi } from "React-icons/ai";
-import { MdOutlineDesignServices } from "React-icons/md";
+import { RiComputerLine } from "react-icons/ri";
+import { FaServer } from "react-icons/fa";
+import { AiOutlineAntDesign, AiOutlineApi } from "react-icons/ai";
+import { MdOutlineDesignServices } from "react-icons/md";
+import { BsCircleFill } from "react-icons/bs";
 import { IProject, Service, Skill } from "./types";
-
-import { BsCircleFill } from "React-icons/bs";
 
 export const services: Service[] = [
   {
@@ -42,8 +41,8 @@ export const services: Service[] = [
 export const languages: Skill[] = [
   {
     Icon: BsCircleFill,
-    name: "Python",
-    level: "0",
+    name: "TypeScript",
+    level: "20",
   },
   {
     Icon: BsCircleFill,
