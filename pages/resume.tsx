@@ -7,7 +7,7 @@ const Resume = () => {
   return (
     <div className="px-6 py-2">
       {/* //! Education & Experience */}
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 md:grid-cols-1">
         <motion.div variants={fadeInUp} initial="initial" animate="animate">
           <h5 className="my-3 text-2xl font-bold">Education</h5>
           <div className="">
@@ -27,7 +27,7 @@ const Resume = () => {
       </div>
 
       {/*Languages & Tools */}
-      <div className="grid gap-9 md:grid-cols-2">
+      <div className="grid gap-9 lg:grid-cols-2 md:grid-cols-1">
         <div>
           <h5 className="my-3 text-2xl font-bold">Language & Framework</h5>
           <div className="my-2">

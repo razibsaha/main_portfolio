@@ -25,7 +25,7 @@ const ProjectCard: FunctionComponent<{
       <Image
         src={image_path}
         alt={name}
-        className="object-cover object-top transition duration-500 transform cursor-pointer hover:scale-110"
+        className="object-cover object-top transition duration-500 transform cursor-pointer hover:scale-125"
         onClick={() => setShowDetail(true)}
         layout="responsive"
         height="150"
@@ -37,7 +37,7 @@ const ProjectCard: FunctionComponent<{
         className="cursor-pointer"
         onClick={() => setShowDetail(true)}
       /> */}
-      <p className="my-2 text-center">{name}</p>
+      <p className="my-2 text-center text-slate-50">{name}</p>
 
       {showDetail && (
         <div className="absolute top-0 left-0 z-10 grid w-full h-auto px-5 py-8 text-black border bg-slate-200 dark:bg-slate-800 md:grid-cols-2 gap-x-12 dark:text-white rounded-xl dark:border-[#64ffda] overflow-hidden">

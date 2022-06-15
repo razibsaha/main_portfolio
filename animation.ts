@@ -8,6 +8,51 @@ export const fadeInUp = {
         y: 0,
       },
 }
+export const fadeInSidebar = {
+    initial: {
+        opacity: 0,
+        y: 20,
+      },
+      animate: {
+        opacity: 1,
+        y: 0
+       ,
+       transition:{
+        delay:0.2,
+        duration: 1
+       } 
+      }
+}
+export const fadeInSocial = {
+    initial: {
+        opacity: 0,
+        y: 40,
+      },
+      animate: {
+        opacity: 1,
+        y: 0
+       ,
+       transition:{
+        delay:0.4,
+        duration: 1
+       } 
+      }
+}
+export const fadeUpImage = {
+    initial: {
+        opacity: 0,
+        y: 30,
+      },
+      animate: {
+        opacity: 1,
+        y: 0
+       ,
+       transition:{
+        delay:0,
+        duration: .5
+       } 
+      }
+}
 export const fadeDownIn = {
     initial: {
         opacity: 0,
@@ -24,6 +69,24 @@ export const stagger = {
       animate: {
         transition: {
             staggerChildren: 0.1,
+        }
+      },
+}
+export const stagger2 = {
+    initial: {
+      },
+      animate: {
+        transition: {
+            staggerChildren: 0.2,
+        }
+      },
+}
+export const stagger3 = {
+    initial: {
+      },
+      animate: {
+        transition: {
+            staggerChildren: 0.3,
         }
       },
 }
