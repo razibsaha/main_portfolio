@@ -12,6 +12,7 @@ const Navbar = () => {
     if(pathname==='/') setActive('About')
     else if(pathname==='/projects') setActive('Projects')
     else if(pathname==='/resume') setActive('Resume')
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (

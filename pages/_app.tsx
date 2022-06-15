@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps,router }: AppProps) {
   return (
       <ThemeProvider attribute="class">
       
-      <div className="relative grid grid-cols-12 gap-5 md:py-12 lg:mb-0 md:mb-16 md:px-8 sm:px-20 lg:px-20 xl:px-32 dark:bg-[#0a192f] mx-auto flex-grow">
+      <div className="relative grid flex-grow grid-cols-12 gap-5 mx-auto md:py-12 lg:mb-0 md:mb-16 md:px-8 sm:px-20 lg:px-20 xl:px-32">
         
         {/* blob */}
     <div className="absolute top-0 bg-purple-500 rounded-full -left-4 h-96 w-96 animate-blob mix-blend-normal blur-xl filter -z-10"></div>
