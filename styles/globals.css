@@ -29,6 +29,8 @@ body {
     rgba(35, 166, 213, 0.5),
     rgba(35, 213, 171, 0.5)
   );
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .checkbox {
