@@ -12,7 +12,7 @@ class MyDocument extends Document {
           />
         </Head>
 
-        <body className="dark:text-white">
+        <body className="dark:text-white text-slate-900">
           
 
           <Main />
