@@ -51,7 +51,7 @@ const About: NextPage = () => {
           {services.map((service) => (
             <motion.div
               variants={fadeInUp}
-              className="col-span-2 p-2 rounded-lg dark:bg-slate-800 dark:bg-dark-200 md:col-span-1"
+              className="col-span-2 p-2 rounded-lg bg-slate-100 dark:bg-slate-800 dark:bg-dark-200 md:col-span-1"
               key={service.title}
             >
               <ServiceCard service={service} />
