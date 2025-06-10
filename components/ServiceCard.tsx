@@ -4,7 +4,7 @@ import { Service } from '../types'
 const ServiceCard: FunctionComponent<{ service: Service }> = ({
         service: { Icon, title, about },
      }) => {
-        function createMarkup() {
+        function createMarkup(): { __html: string } {
             return {
                __html: about,
             }

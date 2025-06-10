@@ -1,4 +1,6 @@
-export const fadeInUp = {
+import { Variants } from "framer-motion";
+
+export const fadeInUp: Variants = {
     initial: {
         opacity: 0,
         y: 60,
@@ -8,7 +10,7 @@ export const fadeInUp = {
         y: 0,
       },
 }
-export const fadeInSidebar = {
+export const fadeInSidebar: Variants = {
     initial: {
         opacity: 0,
         y: 20,
@@ -23,7 +25,7 @@ export const fadeInSidebar = {
        } 
       }
 }
-export const fadeInSocial = {
+export const fadeInSocial: Variants = {
     initial: {
         opacity: 0,
         y: 40,
@@ -38,7 +40,7 @@ export const fadeInSocial = {
        } 
       }
 }
-export const fadeUpImage = {
+export const fadeUpImage: Variants = {
     initial: {
         opacity: 0,
         y: 30,
@@ -53,7 +55,7 @@ export const fadeUpImage = {
        } 
       }
 }
-export const fadeDownIn = {
+export const fadeDownIn: Variants = {
     initial: {
         opacity: 0,
         x: 60,
@@ -63,7 +65,7 @@ export const fadeDownIn = {
         x: 0,
       },
 }
-export const stagger = {
+export const stagger: Variants = {
     initial: {
       },
       animate: {
@@ -72,7 +74,7 @@ export const stagger = {
         }
       },
 }
-export const stagger2 = {
+export const stagger2: Variants = {
     initial: {
       },
       animate: {
@@ -81,7 +83,7 @@ export const stagger2 = {
         }
       },
 }
-export const stagger3 = {
+export const stagger3: Variants = {
     initial: {
       },
       animate: {
@@ -91,7 +93,7 @@ export const stagger3 = {
       },
 }
 
-export const routeAnimation = {
+export const routeAnimation: Variants = {
     initial: {
         opacity: 0
       },

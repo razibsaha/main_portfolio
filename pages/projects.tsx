@@ -3,12 +3,13 @@ import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import ProjectsNavbar from "../components/ProjectsNavbar";
 import { projects as projectsData } from "../data";
-import { Category } from "../types";
+import { Category, IProject } from "../types"; // Ensure IProject is imported if not already
 import { fadeInUp,stagger,fadeDownIn } from "../animation";
+import { NextPage } from "next";
 
-const Projects = () => {
-  const [projects, setProjects] = useState(projectsData);
-  const [active, setActive] = useState("all");
+const Projects: NextPage = () => {
+  const [projects, setProjects] = useState<IProject[]>(projectsData);
+  const [active, setActive] = useState<Category | "All">("All");
 
   const handlerFilterCategory = (category: Category | "All") => {
     if (category === "All") {

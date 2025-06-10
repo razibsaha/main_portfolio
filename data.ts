@@ -3,7 +3,7 @@ import { FaServer } from "react-icons/fa";
 import { AiOutlineAntDesign, AiOutlineApi } from "react-icons/ai";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { BsCircleFill } from "react-icons/bs";
-import { IProject, Service, Skill } from "./types";
+import { IProject, Service, Skill, SocialMediaLink, ContactInformation, TypewriterOptions, ResumeData } from "./types";
 
 export const services: Service[] = [
   {
@@ -172,3 +172,41 @@ export const projects: IProject[] = [
     ],
   },
 ];
+
+export const typewriterOptions: TypewriterOptions = {
+  strings: ["front-end", "back-end", "ui/ux"],
+  autoStart: true,
+  loop: true,
+};
+
+export const resume: ResumeData = {
+  url: "https://drive.google.com/uc?export=download&id=1Gnp64PV9SACNAqnfSI_MSM1zf72d0Xb7",
+  filename: "Razib_Saha_Resume.pdf",
+};
+
+export const socialMedia: SocialMediaLink[] = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/razibsaha/",
+    icon: "FaLinkedin",
+    hoverColor: "hover:text-[#0A66C2]",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/razibsaha",
+    icon: "FaGithub",
+    hoverColor: "hover:text-[#F1502F]",
+  },
+  {
+    name: "Dribbble",
+    url: "https://dribbble.com/razibsaha",
+    icon: "AiOutlineDribbble",
+    hoverColor: "hover:text-[#E94C88]",
+  },
+];
+
+export const contactInfo: ContactInformation = {
+  location: "Feni, Bangladesh",
+  email: "contact@razibsaha.com",
+  phone: "+8801719-881180",
+};

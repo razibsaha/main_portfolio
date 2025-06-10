@@ -9,6 +9,37 @@
   .animation-delay-4000 {
     animation-delay: 4s;
   }
+
+  /* Brand Colors */
+  .text-brand-primary {
+    @apply text-[#64ffda];
+  }
+  .bg-brand-primary {
+    @apply bg-[#64ffda];
+  }
+  .border-brand-primary {
+    @apply border-[#64ffda];
+  }
+  .ring-brand-primary {
+    @apply ring-[#64ffda];
+  }
+  .text-brand-dark {
+    @apply text-[#0a192f];
+  }
+  .text-brand-light-heading {
+    @apply text-[#ccd6f6]; /* Typically used in dark mode for main headings */
+  }
+
+  /* Hover states for brand colors - can be combined with dark: prefix */
+  .hover-text-brand-primary:hover {
+    @apply text-[#64ffda];
+  }
+  .hover-bg-brand-primary:hover {
+    @apply bg-[#64ffda];
+  }
+  .hover-text-brand-dark:hover {
+    @apply text-[#0a192f];
+  }
 }
 
 * {

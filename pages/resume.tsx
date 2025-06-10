@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { fadeInUp } from "../animation";
 import Bar from "../components/Bar";
 import { languages, tools } from "../data";
+import { NextPage } from "next";
 
-const Resume = () => {
+const Resume: NextPage = () => {
   return (
     <div className="px-6 py-2">
       {/* //! Education & Experience */}
