@@ -69,14 +69,14 @@ const ProjectCard: FunctionComponent<{
           </div>
 
           <div>
-            <h2 className="mb-3 text-xl font-medium dark:text-[#64ffda] md:text-2xl">{name}</h2>
+            <h2 className="mb-3 text-xl font-medium dark:text-[var(--color-brand-accent)] md:text-2xl">{name}</h2>
             <h3 className="mb-3 leading-5 font-regular dark:text-slate-300">{description}</h3>
 
             <div className="flex flex-wrap mt-5 space-x-2 text-sm tracking-wider">
               {key_techs.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 my-1 rounded-sm bg-slate-400 dark:bg-[#64ffda] dark:text-slate-800"
+                  className="px-2 py-1 my-1 rounded-sm bg-slate-400 dark:bg-[var(--color-brand-accent)] dark:text-[var(--color-brand-dark-text)]"
                 >
                   {tech}
                 </span>

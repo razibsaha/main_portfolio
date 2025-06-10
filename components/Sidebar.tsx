@@ -4,12 +4,20 @@ import React from "react";
 import dp from "../Assets/images/portfolio_dp.png";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineCloudDownload, AiOutlineDribbble } from "react-icons/ai";
-import { MdLightMode, MdLocationPin, MdNightlight,MdCall } from "react-icons/md";
+import { MdLightMode, MdLocationPin, MdNightlight, MdCall } from "react-icons/md";
 import { SiMinutemailer } from "react-icons/si";
-import { stagger,fadeInSidebar,fadeUpImage,fadeInSocial, stagger2, stagger3 } from "../animation";
+import { stagger, fadeInSidebar, fadeUpImage, fadeInSocial, stagger2, stagger3 } from "../animation";
 import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+import MotionComponent from "./MotionComponent";
+import { typewriterOptions, resume, socialMedia, contactInfo } from "../data";
+
+// Helper to map icon names to components
+const iconComponents: { [key: string]: React.ElementType } = {
+  FaLinkedin,
+  FaGithub,
+  AiOutlineDribbble,
+};
 
 const Sidebar = () => {
   const { theme, setTheme } = useTheme();
@@ -19,102 +27,104 @@ const Sidebar = () => {
   };
 
   return (
-    <motion.div variants={stagger} initial="initial" animate="animate"  className="pt-12">
-      <div className="p-1 rounded-full ring-4 ring-[#64ffda] avatar ">
-        <motion.div variants={fadeUpImage} initial="initial" animate="animate" className="w-32 rounded-full">
+    <MotionComponent variants={stagger} initial="initial" animate="animate" className="pt-12" elementType="div">
+      <div className="p-1 rounded-full ring-4 ring-[var(--color-brand-accent)] avatar ">
+        <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="w-32 rounded-full" elementType="div">
           <Image src={dp} alt="avatar" quality="100" />
-        </motion.div>
-        
+        </MotionComponent>
       </div>
-      <motion.article variants={fadeUpImage} initial="initial" animate="animate" className="mb-3 font-mono dark:text-[#64ffda]">
+      <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="mb-3 font-[var(--font-mono)] dark:text-[var(--color-brand-accent)]" elementType="article">
         Hi, I am
-      </motion.article>
-      <motion.h2 variants={fadeUpImage} initial="initial" animate="animate" className="bigHeading font-bold dark:text-[#ccd6f6]">Razib Saha</motion.h2>
-      {/* <h3 className=" secondHeading dark:text-[#8892b0]">
-        I can design and code
-      </h3> */}
-      <motion.div variants={fadeUpImage} initial="initial" animate="animate" className="mt-1">
-        <motion.span variants={fadeUpImage} initial="initial" animate="animate" className="flex justify-center secondHeading">
-          <motion.span variants={fadeUpImage} initial="initial" animate="animate" className="mr-1">I do</motion.span>
-          <motion.span variants={fadeUpImage} initial="initial" animate="animate" className="dark:text-[#64ffda]">
-          <Typewriter
-            options={{
-              strings: ["front-end", "back-end","ui/ux"],
-              autoStart: true,
-              loop: true,
-            }}
-          />
-          </motion.span>
-        </motion.span>
-      </motion.div>
+      </MotionComponent>
+      <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="bigHeading font-bold dark:text-[var(--color-brand-light-heading)]" elementType="h2">
+        Razib Saha
+      </MotionComponent>
+      <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="mt-1" elementType="div">
+        <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="flex justify-center secondHeading" elementType="span">
+          <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="mr-1" elementType="span">I do</MotionComponent>
+          <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="dark:text-[var(--color-brand-accent)]" elementType="span">
+            <Typewriter options={typewriterOptions} />
+          </MotionComponent>
+        </MotionComponent>
+      </MotionComponent>
 
-      <motion.div variants={fadeUpImage} initial="initial" animate="animate" className="mt-8 mb-6">
-        <a
-          href="https://drive.google.com/uc?export=download&id=1Gnp64PV9SACNAqnfSI_MSM1zf72d0Xb7"
-          download="Razib_Saha_Resume.pdf"
-        >
-          <motion.h6 variants={fadeInSidebar} initial="initial" animate="animate" className="inline px-3 py-3 mt-8 mb-5 text-[#0a192f] dark:text-[#64ffda] dark:hover:text-[#0a192f] text-center border-2 dark:border dark:border-[#64ffda] dark:hover:bg-[#64ffda] hover:bg-black rounded-lg hover:text-white">
+      <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="mt-8 mb-6" elementType="div">
+        <a href={resume.url} download={resume.filename}>
+          <MotionComponent
+            variants={fadeInSidebar}
+            initial="initial"
+            animate="animate"
+            className="inline px-3 py-3 mt-8 mb-5 text-[var(--color-brand-dark-text)] dark:text-[var(--color-brand-accent)] dark:hover:text-[var(--color-brand-dark-text)] text-center border-2 dark:border-[var(--color-brand-accent)] dark:hover:bg-[var(--color-brand-accent)] hover:bg-black rounded-lg hover:text-white"
+            elementType="h6"
+          >
             <AiOutlineCloudDownload className="inline w-6 h-6 mr-2" />
             Download Resume
-          </motion.h6>
+          </MotionComponent>
         </a>
-      </motion.div>
+      </MotionComponent>
+
       {/* Social Media Icons */}
-      <motion.div variants={stagger2} initial="initial" animate="animate" className="mt-12 mb-5 md:mb-12">
-        <motion.a variants={fadeInSocial} initial="initial" animate="animate" href="https://www.linkedin.com/in/razibsaha/">
-          <FaLinkedin className="inline w-8 h-8 mx-2 hover:text-[#0A66C2]" />
-        </motion.a>
-        <motion.a variants={fadeInSocial} initial="initial" animate="animate" href="https://github.com/razibsaha">
-          {" "}
-          <FaGithub className="inline w-8 h-8 mx-2 hover:text-[#F1502F]" />
-        </motion.a>
-        <motion.a variants={fadeInSocial} initial="initial" animate="animate" href="https://dribbble.com/razibsaha">
-          {" "}
-          <AiOutlineDribbble className="inline w-8 h-8 mx-2  hover:text-[#E94C88]" />
-        </motion.a>
-      </motion.div>
+      <MotionComponent variants={stagger2} initial="initial" animate="animate" className="mt-12 mb-5 md:mb-12" elementType="div">
+        {socialMedia.map((social) => {
+          const IconComponent = iconComponents[social.icon];
+          return (
+            <MotionComponent
+              key={social.name}
+              variants={fadeInSocial}
+              initial="initial"
+              animate="animate"
+              elementType="a"
+              className={`inline w-8 h-8 mx-2 ${social.hoverColor}`} // Added className for hover effect
+              // @ts-ignore
+              href={social.url} // href is a valid prop for 'a'
+              // @ts-ignore
+              aria-label={social.name} // Add aria-label for accessibility
+              data-testid={`social-link-${social.name}`} // Added for testing
+            >
+              {IconComponent && <IconComponent className="inline w-8 h-8" />}
+            </MotionComponent>
+          );
+        })}
+      </MotionComponent>
+
       {/* Contact Info */}
-      <motion.div variants={stagger3} initial="initial" animate="animate" className="grid md:mb-12">
-        <motion.div variants={fadeInSidebar} initial="initial" animate="animate" className="flex flex-col items-start mx-auto mt-auto mb-5">
-          <motion.p variants={fadeInSidebar} initial="initial" animate="animate">
-            <MdLocationPin className="inline w-6 h-6 mr-3 dark:text-[#64ffda]" />
-            Feni, Bangladesh
-          </motion.p>
-          <motion.p variants={fadeInSidebar} initial="initial" animate="animate">
-            <SiMinutemailer className="inline w-6 h-6 mr-3 dark:text-[#64ffda]" />
-            contact@razibsaha.com
-          </motion.p>
-          <motion.p variants={fadeInSidebar} initial="initial" animate="animate">
-            <MdCall className="inline w-6 h-6 mr-3 dark:text-[#64ffda]" />
-            +8801719-881180
-          </motion.p>
-        </motion.div>
-      </motion.div>
-      <motion.div variants={fadeInSidebar} initial="initial" animate="animate">
+      <MotionComponent variants={stagger3} initial="initial" animate="animate" className="grid md:mb-12" elementType="div">
+        <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" className="flex flex-col items-start mx-auto mt-auto mb-5" elementType="div">
+          <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" elementType="p">
+            <MdLocationPin className="inline w-6 h-6 mr-3 dark:text-[var(--color-brand-accent)]" />
+            {contactInfo.location}
+          </MotionComponent>
+          <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" elementType="p">
+            <SiMinutemailer className="inline w-6 h-6 mr-3 dark:text-[var(--color-brand-accent)]" />
+            {contactInfo.email}
+          </MotionComponent>
+          <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" elementType="p">
+            <MdCall className="inline w-6 h-6 mr-3 dark:text-[var(--color-brand-accent)]" />
+            {contactInfo.phone}
+          </MotionComponent>
+        </MotionComponent>
+      </MotionComponent>
+
+      <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" elementType="div">
         <button
-          className="px-7 py-2 text-white dark:bg-[#64ffda]
-          dark:text-black
-          bg-black rounded-full cursor-pointer  hover:scale-105 focus:outline-none"
-          onClick={() => window.open("mailto:contact@razibsaha.com")}
+          className="px-7 py-2 text-white dark:bg-[var(--color-brand-accent)] dark:text-black bg-black rounded-full cursor-pointer hover:scale-105 focus:outline-none"
+          onClick={() => window.open(`mailto:${contactInfo.email}`)}
         >
           Email me
         </button>
-      </motion.div>
-      
-      <motion.div variants={fadeInSidebar} initial="initial" animate="animate" className="flex items-center justify-center mt-5 mb-5">
-        <input type="checkbox" className="checkbox" id="checkbox" />
-        <label
+      </MotionComponent>
+
+      {/* Simplified Theme Changer Button */}
+      <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" className="flex items-center justify-center mt-5 mb-5" elementType="div">
+        <button
           onClick={changeTheme}
-          htmlFor="checkbox"
-          className="checkbox-label dark:bg-slate-700 bg-slate-700"
+          className="px-4 py-2 font-medium text-white bg-gray-700 rounded-md hover:bg-gray-600 dark:bg-gray-300 dark:text-black dark:hover:bg-gray-400"
+          data-testid="theme-changer-button"
         >
-          <MdNightlight className="w-8 h-12 text-[#64ffda]" />
-          <MdLightMode className="inline w-8 h-12 text-[#64ffda]"/>
-          <span className="w-8 h-12 ball"></span>
-        </label>
-      </motion.div>
-      
-    </motion.div>
+          {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
+      </MotionComponent>
+    </MotionComponent>
   );
 };
 export default Sidebar;

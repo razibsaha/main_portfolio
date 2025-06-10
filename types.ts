@@ -21,4 +21,30 @@ export interface IProject {
   key_techs: string[];
 }
 
-export type Category = "React" | "Node" | "Express" | "HTML" | "MongoDB" | "CSS" | "TailwindCSS" | "Bootstrap" | "Firebase" | "Netlify"
+export type Category = "React" | "Node" | "Express" | "HTML" | "MongoDB" | "CSS" | "TailwindCSS" | "Bootstrap" | "Firebase" | "Netlify";
+
+export interface SocialMediaLink {
+  name: string;
+  url: string;
+  icon: string; // Corresponds to keys in iconComponents in Sidebar.tsx
+  hoverColor: string;
+}
+
+export interface ContactInformation {
+  location: string;
+  email: string;
+  phone: string;
+}
+
+export interface TypewriterOptions {
+  strings: string[];
+  autoStart: boolean;
+  loop: boolean;
+}
+
+export interface ResumeData {
+  url: string;
+  filename: string;
+}
+
+export type NavItemName = 'About' | 'Projects' | 'Resume';

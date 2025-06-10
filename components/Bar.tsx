@@ -1,14 +1,14 @@
 import { FunctionComponent } from "react";
 
 import { Skill } from "../types";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const Bar: FunctionComponent<{ value: Skill }> = ({
   value: { Icon, level, name },
 }) => {
   const bar_width = `${level}%`;
 
-  const variants = {
+  const variants: Variants = {
     initial: {
       width: 0,
     },
