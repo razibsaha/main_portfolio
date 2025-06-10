@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <section className="flex items-center justify-between px-5 py-3 my-3">
       
-      <span className="text-2xl font-bold dark:text-[#64ffda]">{active}</span>
+      <span className="text-2xl font-bold dark:text-[var(--color-brand-accent)]">{active}</span>
       
       <div className='text-base font-normal md:text-xl'>
             <NavItem

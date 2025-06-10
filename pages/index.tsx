@@ -3,7 +3,6 @@ import { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
 import { fadeDownIn, fadeInUp, stagger } from "../animation";
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../data";
-console.log(services);
 
 const About: NextPage = () => {
   return (
@@ -39,7 +38,7 @@ const About: NextPage = () => {
         className="p-4 mt-5 "
         style={{ marginLeft: "-1.5rem", marginRight: "-1.5rem" }}
       >
-        <h6 className="my-3 text-xl font-medium tracking-wide dark:text-[#64ffda]">
+         <h6 className="my-3 text-xl font-medium tracking-wide dark:text-[var(--color-brand-accent)]">
           Services I do
         </h6>
         <motion.div

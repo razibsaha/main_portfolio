@@ -19,7 +19,7 @@ const NavItem: FunctionComponent<NavItemProps> = ({
     <Link href={route}>
       <a>
         <span
-          className='mx-2 cursor-pointer hover:border-b-4 dark:hover:text-[#64ffda]'
+          className='mx-2 cursor-pointer hover:border-b-4 dark:hover:text-[var(--color-brand-accent)]'
           onClick={() => setActive(name)}
         >
           {name}

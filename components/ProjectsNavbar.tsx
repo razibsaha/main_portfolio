@@ -14,8 +14,8 @@ export const NavItem: FunctionComponent<NavItemProps> = ({
 }) => {
   // Type guard for active comparison
   const isActive = active === value;
-  let className = "capitalize cursor-pointer hover:text-[#004e3c] dark:hover:text-[#64ffda]";
-  if (isActive) className = "font-bold text-black dark:text-[#64ffda]";
+  let className = "capitalize cursor-pointer hover:text-[#004e3c] dark:hover:text-[var(--color-brand-accent)]";
+  if (isActive) className = "font-bold text-black dark:text-[var(--color-brand-accent)]";
 
   return (
     <li className={className} onClick={() => handlerFilterCategory(value)}>

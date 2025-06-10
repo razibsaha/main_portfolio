@@ -88,24 +88,26 @@ describe('Sidebar Component', () => {
   });
 
   it('calls setTheme when theme changer is clicked', () => {
-    // Initial global mock for useTheme returns { theme: 'light', setTheme }
-
-    // First render and first click
     const { rerender } = render(<Sidebar />);
-    const themeChangerLabel = screen.getByTestId('theme-changer-label');
-    expect(themeChangerLabel).toBeInTheDocument();
+    let themeChangerButton = screen.getByTestId('theme-changer-button');
+    expect(themeChangerButton).toBeInTheDocument();
+    // Initial theme is 'light' (from mockCurrentTheme default in beforeEach)
+    expect(themeChangerButton).toHaveTextContent('Switch to Dark Mode');
 
-    fireEvent.click(themeChangerLabel);
+    fireEvent.click(themeChangerButton);
     expect(mockSetTheme).toHaveBeenCalledTimes(1);
-    expect(mockSetTheme).toHaveBeenCalledWith('dark'); // Assuming default is 'light'
+    expect(mockSetTheme).toHaveBeenCalledWith('dark');
 
     // Setup for second click: simulate theme is now 'dark'
     mockSetTheme.mockClear();
-    mockCurrentTheme = 'dark'; // Change the underlying variable for the mock
-    // No need to change mockReturnValue here if useTheme's mockImplementation reads mockCurrentTheme
+    mockCurrentTheme = 'dark';
+    // Rerender. The mockImplementation of useTheme in beforeEach will pick up the new mockCurrentTheme.
     rerender(<Sidebar />);
 
-    fireEvent.click(themeChangerLabel);
+    themeChangerButton = screen.getByTestId('theme-changer-button'); // Re-fetch after rerender
+    expect(themeChangerButton).toHaveTextContent('Switch to Light Mode');
+
+    fireEvent.click(themeChangerButton);
     expect(mockSetTheme).toHaveBeenCalledTimes(1);
     expect(mockSetTheme).toHaveBeenCalledWith('light');
   });

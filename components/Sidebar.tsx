@@ -28,21 +28,21 @@ const Sidebar = () => {
 
   return (
     <MotionComponent variants={stagger} initial="initial" animate="animate" className="pt-12" elementType="div">
-      <div className="p-1 rounded-full ring-4 ring-brand-primary avatar ">
+      <div className="p-1 rounded-full ring-4 ring-[var(--color-brand-accent)] avatar ">
         <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="w-32 rounded-full" elementType="div">
           <Image src={dp} alt="avatar" quality="100" />
         </MotionComponent>
       </div>
-      <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="mb-3 font-mono dark:text-brand-primary" elementType="article">
+      <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="mb-3 font-[var(--font-mono)] dark:text-[var(--color-brand-accent)]" elementType="article">
         Hi, I am
       </MotionComponent>
-      <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="bigHeading font-bold dark:text-brand-light-heading" elementType="h2">
+      <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="bigHeading font-bold dark:text-[var(--color-brand-light-heading)]" elementType="h2">
         Razib Saha
       </MotionComponent>
       <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="mt-1" elementType="div">
         <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="flex justify-center secondHeading" elementType="span">
           <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="mr-1" elementType="span">I do</MotionComponent>
-          <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="dark:text-brand-primary" elementType="span">
+          <MotionComponent variants={fadeUpImage} initial="initial" animate="animate" className="dark:text-[var(--color-brand-accent)]" elementType="span">
             <Typewriter options={typewriterOptions} />
           </MotionComponent>
         </MotionComponent>
@@ -54,7 +54,7 @@ const Sidebar = () => {
             variants={fadeInSidebar}
             initial="initial"
             animate="animate"
-            className="inline px-3 py-3 mt-8 mb-5 text-brand-dark dark:text-brand-primary dark:hover:text-brand-dark text-center border-2 dark:border-brand-primary dark:hover:bg-brand-primary hover:bg-black rounded-lg hover:text-white"
+            className="inline px-3 py-3 mt-8 mb-5 text-[var(--color-brand-dark-text)] dark:text-[var(--color-brand-accent)] dark:hover:text-[var(--color-brand-dark-text)] text-center border-2 dark:border-[var(--color-brand-accent)] dark:hover:bg-[var(--color-brand-accent)] hover:bg-black rounded-lg hover:text-white"
             elementType="h6"
           >
             <AiOutlineCloudDownload className="inline w-6 h-6 mr-2" />
@@ -91,15 +91,15 @@ const Sidebar = () => {
       <MotionComponent variants={stagger3} initial="initial" animate="animate" className="grid md:mb-12" elementType="div">
         <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" className="flex flex-col items-start mx-auto mt-auto mb-5" elementType="div">
           <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" elementType="p">
-            <MdLocationPin className="inline w-6 h-6 mr-3 dark:text-brand-primary" />
+            <MdLocationPin className="inline w-6 h-6 mr-3 dark:text-[var(--color-brand-accent)]" />
             {contactInfo.location}
           </MotionComponent>
           <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" elementType="p">
-            <SiMinutemailer className="inline w-6 h-6 mr-3 dark:text-brand-primary" />
+            <SiMinutemailer className="inline w-6 h-6 mr-3 dark:text-[var(--color-brand-accent)]" />
             {contactInfo.email}
           </MotionComponent>
           <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" elementType="p">
-            <MdCall className="inline w-6 h-6 mr-3 dark:text-brand-primary" />
+            <MdCall className="inline w-6 h-6 mr-3 dark:text-[var(--color-brand-accent)]" />
             {contactInfo.phone}
           </MotionComponent>
         </MotionComponent>
@@ -107,25 +107,22 @@ const Sidebar = () => {
 
       <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" elementType="div">
         <button
-          className="px-7 py-2 text-white dark:bg-brand-primary dark:text-black bg-black rounded-full cursor-pointer hover:scale-105 focus:outline-none"
+          className="px-7 py-2 text-white dark:bg-[var(--color-brand-accent)] dark:text-black bg-black rounded-full cursor-pointer hover:scale-105 focus:outline-none"
           onClick={() => window.open(`mailto:${contactInfo.email}`)}
         >
           Email me
         </button>
       </MotionComponent>
 
+      {/* Simplified Theme Changer Button */}
       <MotionComponent variants={fadeInSidebar} initial="initial" animate="animate" className="flex items-center justify-center mt-5 mb-5" elementType="div">
-        <input type="checkbox" className="checkbox" id="checkbox" />
-        <label
+        <button
           onClick={changeTheme}
-          htmlFor="checkbox"
-          className="checkbox-label dark:bg-slate-700 bg-slate-700"
-          data-testid="theme-changer-label" // Added for testing
+          className="px-4 py-2 font-medium text-white bg-gray-700 rounded-md hover:bg-gray-600 dark:bg-gray-300 dark:text-black dark:hover:bg-gray-400"
+          data-testid="theme-changer-button"
         >
-          <MdNightlight className="w-8 h-12 text-brand-primary" />
-          <MdLightMode className="inline w-8 h-12 text-brand-primary" />
-          <span className="w-8 h-12 ball"></span>
-        </label>
+          {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
       </MotionComponent>
     </MotionComponent>
   );

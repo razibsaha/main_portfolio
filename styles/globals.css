@@ -1,6 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-mono: ui-monospace, SFMono-Regular;
+  --font-body: "Nunito Sans";
+  --color-dark-blue: #050A18;
+  --color-light-white: rgba(255,255,255,0.17);
+  --color-brand-accent: #64ffda;
+  --color-brand-dark-text: #0a192f;
+  --color-brand-light-heading: #ccd6f6;
+}
+
+/* Existing custom utilities and other styles below */
+/* It's possible these @apply rules might need adjustment with v4 */
+/* For example, if they reference colors that are now CSS variables */
 
 @layer utilities {
   .animation-delay-2000 {
@@ -12,33 +24,33 @@
 
   /* Brand Colors */
   .text-brand-primary {
-    @apply text-[#64ffda];
+    @apply text-[var(--color-brand-accent)];
   }
   .bg-brand-primary {
-    @apply bg-[#64ffda];
+    @apply bg-[var(--color-brand-accent)];
   }
   .border-brand-primary {
-    @apply border-[#64ffda];
+    @apply border-[var(--color-brand-accent)];
   }
   .ring-brand-primary {
-    @apply ring-[#64ffda];
+    @apply ring-[var(--color-brand-accent)];
   }
   .text-brand-dark {
-    @apply text-[#0a192f];
+    @apply text-[var(--color-brand-dark-text)];
   }
   .text-brand-light-heading {
-    @apply text-[#ccd6f6]; /* Typically used in dark mode for main headings */
+    @apply text-[var(--color-brand-light-heading)];
   }
 
   /* Hover states for brand colors - can be combined with dark: prefix */
   .hover-text-brand-primary:hover {
-    @apply text-[#64ffda];
+    @apply text-[var(--color-brand-accent)];
   }
   .hover-bg-brand-primary:hover {
-    @apply bg-[#64ffda];
+    @apply bg-[var(--color-brand-accent)];
   }
   .hover-text-brand-dark:hover {
-    @apply text-[#0a192f];
+    @apply text-[var(--color-brand-dark-text)];
   }
 }
 
@@ -47,7 +59,6 @@
 }
 
 html,
-
 body {
   padding: 0;
   margin: 0 auto; 
@@ -59,40 +70,6 @@ body {
     rgba(35, 213, 171, 0.5)
   );
   height: 100vh;
-}
-
-.checkbox {
-  opacity: 0;
-  position: absolute;
-}
-
-.checkbox-label {
-  width: 80px;
-  height: 40px;
-  border-radius: 50px;
-  position: relative;
-  padding: 8px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.checkbox-label .ball {
-  background-color: #fff;
-  width: 38px;
-  height: 38px;
-  position: absolute;
-  left: 1px;
-  right: 1px;
-  top: 1px;
-  bottom: 1px;
-  border-radius: 50%;
-  transition: transform 0.2s linear;
-}
-
-.checkbox:checked + .checkbox-label .ball {
-  transform: translateX(42px);
 }
 
 a {
@@ -110,12 +87,12 @@ a {
 }
 
 .btn-ghost {
-  border: 1px solid #64ffda;
-  color: #64ffda;
+  border: 1px solid var(--color-brand-accent);
+  color: var(--color-brand-accent);
 }
 .btn-ghost:hover {
-  background-color: #64ffda;
-  color: #0a192f;
+  background-color: var(--color-brand-accent);
+  color: var(--color-brand-dark-text);
 }
 
 h1 {
@@ -128,7 +105,7 @@ h1 {
 
 h3 {
   margin-top: 10px;
-  color: var(--slate);
+  color: var(--slate); /* This var(--slate) might need to be defined in @theme or come from Tailwind's new default palette */
   line-height: 0.9;
 }
 p {
